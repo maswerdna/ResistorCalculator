@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Resistance Calculator</title>
+	<script type="text/javascript"></script>
+	<style type="text/css">
+	    #appFooter {
+	    	padding: 2px;
+	    	background-color: #15a;
+	    	border-radius: 2px;
+	    	outline: none;
+
+
+	    	background-image: -webkit-linear-gradient(top, #ee432e 0%, #c63929 50%, #b51700 50%, #891100 100%);
+	    	   background-image: -moz-linear-gradient(top, #ee432e 0%, #c63929 50%, #b51700 50%, #891100 100%);
+	    	     background-image: -o-linear-gradient(top, #ee432e 0%, #c63929 50%, #b51700 50%, #891100 100%);
+	    	        background-image: linear-gradient(top, #ee432e 0%, #c63929 50%, #b51700 50%, #891100 100%);
+	    	border: 1px solid #ffefbb;
+	    	box-shadow: inset 0px 0px 0px 1px rgba(255, 115, 100, 0.4), 0 0px 1px #333333;
+	    	color: #fff;
+	    	font: bold 12px garamond;
+	    	text-align: center;
+	    	text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.8);
+	    }
+	    #appTitle {
+	    	background-color: #15a;
+	    	border-radius: 2px;
+	    	outline: none;
+	    	padding: 2px;
+
+
+	    	background-image: -webkit-linear-gradient(top, #ee432e 0%, #c63929 50%, #b51700 50%, #891100 100%);
+	    	   background-image: -moz-linear-gradient(top, #ee432e 0%, #c63929 50%, #b51700 50%, #891100 100%);
+	    	     background-image: -o-linear-gradient(top, #ee432e 0%, #c63929 50%, #b51700 50%, #891100 100%);
+	    	        background-image: linear-gradient(top, #ee432e 0%, #c63929 50%, #b51700 50%, #891100 100%);
+	    	border: 1px solid #ffefbb;
+	    	box-shadow: inset 0px 0px 0px 1px rgba(255, 115, 100, 0.4), 0 0px 1px #333333;
+	    	color: #fff;
+	    	font: bold 16px garamond;
+	    	text-align: center;
+	    	text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.8);
+	    }
+	    .calculate {
+	    	background-color: #15a;
+	    	border-radius: 2px;
+	    	outline: none;
+	    	padding: 2px 5px;
+
+	    	cursor: pointer;
+
+	    	background-image: -webkit-linear-gradient(top, #ee432e 0%, #c63929 50%, #b51700 50%, #891100 100%);
+	    	   background-image: -moz-linear-gradient(top, #ee432e 0%, #c63929 50%, #b51700 50%, #891100 100%);
+	    	     background-image: -o-linear-gradient(top, #ee432e 0%, #c63929 50%, #b51700 50%, #891100 100%);
+	    	        background-image: linear-gradient(top, #ee432e 0%, #c63929 50%, #b51700 50%, #891100 100%);
+	    	border: 1px solid #ffefbb;
+	    	box-shadow: inset 0px 0px 0px 1px rgba(255, 115, 100, 0.4), 0 0px 1px #333333;
+	    	text-decoration: none;
+	    	color: #fff;
+	    	font: bold 0.9em garamond;
+	    	text-align: center;
+	    	text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.8);
+	    }
+	    .calculate:hover {
+	    	color: #000;
+	    	background-image: linear-gradient(#fa4 50%, #f60 50%);
+	    }
+	    #digit {
+	    	width: 80px;
+	    }
+	    #imageDiv {
+	    	border: 1px solid #ececec;
+	    	padding: 10px;
+	    	height: 110px;
+			background-color: #fff;
+			border-radius: 2px;
+
+	    	/*width: 50%;*/
+	    	    
+	    	    border-radius: 2px ;
+	    	    box-shadow: 0px 0px 2px #333333;
+	    	    text-align: center;
+	    }
+		#imageHolder {
+			background-color: #eeeeee;
+			/*background-color: rgba(255, 239, 187, 0.7);*/
+			/*border-top: 8px solid #e5e5e5;*/
+			line-height: 3em;
+			border-radius: 54px;
+			height: 72px;
+			width: 40%;
+
+			box-shadow: 1px 1px 2px #333333;
+		}
+		.imageLines {
+			font-size: 3.5em;
+			cursor: default;
+		}
+		.imageLines:hover {
+	    	text-shadow: 0px -1px 4px rgba(0, 0, 0, 0.8);
+		}
+		#inputDiv {
+			box-shadow: 0px 0px 3px #333333;
+			padding: 10px;
+			height: 76px;
+			border-radius: 2px;
+			background-color: #fff;
+		}
+		#range {
+			width: 30px;
+		}
+		#result {
+			font-weight: bold;
+			color: red;
+			font-size: 16px;
+		}
+		#result2 {
+			font-weight: bold;
+			font-size: 16px;
+		}
+		#selectDiv {
+			height: 110px;
+			box-shadow: 0px 0px 3px #333333;
+			padding: 10px;
+			border-radius: 2px;
+			background-color: #fff;
+		}
+		.selects {
+			width: 19%;
+		}
+		#separator4:hover, #separator5:hover {
+			text-shadow: 0px -1px 1px transparent;
+		}
+		#styleDiv {
+	    	font-family: cursive;
+	    	font-weight: bold;
+	    	font-size: 13px;
+	    }
+	   #wrapper {
+			padding: 0 1%;
+			width: 98%;
+		}
+	</style>
+</head>
+<body>
+
+<div id="wrapper">
+
+<div id="styleDiv">
+<div id="appTitle">RESISTANCE VALUE CALCULATOR</div><br>
+
+<div id="selectDiv">
+<span class="sectionTitle">CONVERT COLOR CODE TO DIGIT</span><br>
+<select id="bandNumber" title="Select either 4Band or 5Band. Select '4Band' for 3color" onchange="bandType(this.value)">
+	<option value="#">Select Band Type</option>
+	<option value="4">4Band</option>
+	<option value="5">5Band</option>
+</select><br><br>
+<div id="bandDiv" style="display: none;">
+<select id="band1" title="Select the first band of the resistor" class="selects" onchange="bandColor('color1',this.value)">
+	<option value="#">Select Color 1</option>
+	<option value="brown">Brown</option>
+	<option value="red">Red</option>
+	<option value="orange">Orange</option>
+	<option value="yellow">Yellow</option>
+	<option value="green">Green</option>
+	<option value="blue">Blue</option>
+	<option value="violet">Violet</option>
+	<option value="grey">Grey</option>
+	<option value="white">White</option>
+</select>
+
+<select id="band2" title="Select the second band of the resistor" class="selects" onchange="bandColor('color2',this.value)">
+	<option value="#">Select Color 2</option>
+	<option value="black">Black</option>
+	<option value="brown">Brown</option>
+	<option value="red">Red</option>
+	<option value="orange">Orange</option>
+	<option value="yellow">Yellow</option>
+	<option value="green">Green</option>
+	<option value="blue">Blue</option>
+	<option value="violet">Violet</option>
+	<option value="grey">Grey</option>
+	<option value="white">White</option>
+</select>
+
+<select id="band3" title="Select the third band of the resistor" class="selects" onchange="bandColor('color3',this.value)">
+	<option value="#">Select Color 3</option>
+	<option value="black">Black</option>
+	<option value="brown">Brown</option>
+	<option value="red">Red</option>
+	<option value="orange">Orange</option>
+	<option value="yellow">Yellow</option>
+	<option value="green">Green</option>
+	<option value="blue">Blue</option>
+	<option value="violet">Violet</option>
+	<option value="grey">Grey</option>
+	<option value="white">White</option>
+	<option disabled id="value1" value="gold">Gold</option><!-- this would not show in 5band -->
+	<option disabled id="value2" value="silver">Silver</option><!-- this would not show in 5band -->
+	<!-- <option value="transparent">None</option> -->
+</select>
+
+<select id="band4" title="" class="selects" onchange="bandColor('color4',this.value)">
+	<option value="#">Select Color 4</option>
+	<option value="black">Black</option>
+	<option value="brown">Brown</option>
+	<option value="red">Red</option>
+	<option disabled id="tolerance1" value="orange">Orange</option><!-- this would be invisible in a 4band -->
+	<option disabled id="tolerance2" value="yellow">Yellow</option><!-- this would be invisible in a 4band -->
+	<option disabled id="tolerance3" value="green">Green</option><!-- this would be invisible in a 4band -->
+	<option disabled id="tolerance4" value="blue">Blue</option><!-- this would be invisible in a 4band -->
+	<option disabled id="tolerance5" value="violet">Violet</option><!-- this would be invisible in a 4band -->
+	<option disabled id="tolerance6" value="grey">Grey</option><!-- this would be invisible in a 4band -->
+	<option disabled id="tolerance7" value="white">White</option><!-- this would be invisible in a 4band -->
+	<option value="gold">Gold</option>
+	<option value="silver">Silver</option>
+	<option disabled id="value3" value="transparent">None</option><!-- this would not show in 5band -->
+</select>
+
+<select id="band5" title="" class="selects" onchange="bandColor('color5',this.value)" style="display: none;">
+	<option value="#">Select Color 5</option>
+	<option value="black">Black</option>
+	<option value="brown">Brown</option>
+	<option value="red">Red</option>
+	<option value="gold">Gold</option>
+	<option value="silver">Silver</option>
+	<!-- <option value="transparent">None</option> -->
+</select>
+
+<br>
+<br>
+<span class="calculate" onclick="calculate()">CALCULATE</span>
+<br><br>
+</div><!-- end band div -->
+</div><!-- end selectDiv -->
+			
+<br>
+<div id="inputDiv">
+<span class="sectionTitle">CONVERT DIGIT TO COLOR CODE</span><br>
+    <select id="bandValue" title="Select either 4 or 5 for 4Band or 5Band respectively" onchange="bandValue(this.value)">
+	<option value="#">Select Band Value</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+</select><br><br>
+	<div id="inputs" style="display: none;">
+		RESISTANCE VALUE: <input id="digit" onkeyup="showDigit(this.value)">
+		TOLERANCE: <input id="range" onkeyup="showTolerance(this.value)" value=0>
+		<span class="calculate" onclick="calculateColor()">CONVERT</span>
+	</div>
+</div><!-- end inputDiv -->
+</div><!-- end styleDiv -->
+<br>
+
+<div id="imageDiv" title="Hover on each color to view its properties"><center>
+	<div id="imageHolder" title="Your virtual resistor">
+	                        <span id="color1" title="" class="imageLines"></span>
+	                        <span id="color2" title="" class="imageLines"></span>
+	                        <span id="color3" title="" class="imageLines"></span>
+	                        <span id="separator4" style="display: none;" class="imageLines"></span>
+	                        <span id="color4" title="" class="imageLines"></span>
+
+	                        <span id="separator5" style="display: none;" class="imageLines"></span>
+	                        <span id="color5" title="" class="imageLines"></span>
+	</div></center>
+	<span id="result">0Ohms</span> 
+	<span id="result2">(0%)</span>
+</div><!-- end imageDiv -->
+<br>
+<div id="appFooter">ResistanceValueCalculator&copy Developed by KingSam&#153 for BANDS TECHNOLOGIES<br>
+                    For enquiries & contributions: 2347037270037</div>
+</div><!-- end wrapper -->
+
+
+
+
+
+
+<script>
+// alert(1500000000%1000000000);
+	var band1 = document.getElementById("band1");
+	var band2 = document.getElementById("band2");
+	var band3 = document.getElementById("band3");
+	var band4 = document.getElementById("band4");
+	var band5 = document.getElementById("band5");
+
+	var digit = document.getElementById("digit");
+	var range = document.getElementById("range");
+
+	var sep4 = document.getElementById("separator4");
+	var sep5 = document.getElementById("separator5");
+
+	var bandNumber = document.getElementById("bandNumber");
+
+	function bandColor(band,value) {//filling and coloring the bands
+		document.getElementById(band).style.display = "";//
+		document.getElementById(band).innerHTML = "|";
+		document.getElementById(band).title = value;
+		document.getElementById(band).style.color = value;
+	}
+
+	function bandType(value) {//selecting 4band or 4band
+		document.getElementById("result").innerHTML = "0Ohms";
+		document.getElementById("result2").innerHTML = "(0%)";
+		document.getElementById("bandDiv").style.display = "block";
+
+		document.getElementById("inputs").style.display = "none";
+		document.getElementById("bandValue").value = "#";
+
+
+		removeLines();
+		for (var i = 1; i <= 5; i++) {
+			document.getElementById("band"+i).value = "#";
+		}
+
+		if (value == "5") {//a five band color code
+			for (var i = 1; i <= 7; i++) {//show the hidden colors in band 4
+				document.getElementById("tolerance"+i).disabled = false;
+			}
+				//show the colors in band 5
+				document.getElementById("value1").disabled = true;
+				document.getElementById("value2").disabled = true;
+				document.getElementById("value3").disabled = true;
+			
+			sep4.style.display = "none";//hide 4band separator
+			band5.style.display = "";//make band5 <select> visible
+
+			var color5 = document.getElementById("color5");
+			document.getElementById("band4").title = "Select the fourth band of the resistor";
+			document.getElementById("band5").title = "Select the last/farthest band";
+			color5.style.display = "";//show the 5th color
+			color5.innerHTML = "";//clear the content of the band
+
+			sep5.style.display = "";//show 5band separator
+			sep5.innerHTML = "||";//fill 5band's separator
+			sep5.style.color = "transparent";//make the separator invisible
+		}else{//a four band color code
+			for (var i = 1; i <= 7; i++) {//hide the colors in band 4
+				document.getElementById("tolerance"+i).disabled = true;
+			}
+			
+			//hide the colors in band 4
+				document.getElementById("value1").disabled = false;
+				document.getElementById("value2").disabled = false;
+				document.getElementById("value3").disabled = false;
+
+			band5.style.display = "none";//hide band5 <select>
+			band5.value = "#";
+			sep5.style.display = "none";//hide 5band separator
+			document.getElementById("color5").style.display = "none";//hide the 5th color
+			document.getElementById("band4").title = "Select the last/farthest band. Select 'None' for 3color";//hide the 5th color
+
+			sep4.style.display = "";//4band separator
+			sep4.innerHTML = "||";//fill 4band's separator
+			sep4.style.color = "transparent";//make the separator invisible
+		}
+	}
+
+	function bandValue(value) {
+		removeLines();
+		document.getElementById("result").innerHTML = "0Ohms";
+		document.getElementById("result2").innerHTML = "(0%)";
+		document.getElementById("inputs").style.display = "block";
+
+		document.getElementById("bandNumber").value = "#";
+		document.getElementById("bandDiv").style.display = "none";
+
+
+		if (value == "5") {//a five band color code
+			sep4.style.display = "none";//hide 4band separator
+
+			sep5.style.display = "";//show 5band separator
+			sep5.innerHTML = "||";//fill 5band's separator
+			sep5.style.color = "transparent";//make the separator invisible
+		}else{//a four band color code
+			document.getElementById("color5").style.display = "none";
+			sep5.style.display = "none";//hide 5band separator
+
+			sep4.style.display = "";//show 4band separator
+			sep4.innerHTML = "||";//fill 4band's separator
+			sep4.style.color = "transparent";//make the separator invisible
+		}
+	}
+
+
+	function calculate() {//converting to digit
+		var values = {"black":0,"brown":1,"red":2,"orange":3,"yellow":4,"green":5,"blue":6,"violet":7,"grey":8,"white":9,}
+		var tolerance = {"transparent":20,"silver":10,"gold":5,"red":2,"brown":1,"green":0.5,"violet":0.1,"blue":0.25,"grey":0.05,"black":0,}
+
+		if (bandNumber.value == "4") {
+			if (band1.value == "#" || band2.value == "#" || band3.value == "#" || band4.value == "#") {
+				alert("Select all colors before proceeding");
+			}else{
+			var multiplier = 1;
+			for (var i = 0; i < values[band3.value]; i++) {
+				multiplier *= 10;
+			}
+			if (band3.value == "gold") {multiplier = 0.1;}
+			if (band3.value == "silver") {multiplier = 0.01;}
+
+				var abs = (((values[band1.value]*10) + values[band2.value]) * multiplier);
+
+				var min = abs - ((tolerance[band4.value] / 100) * abs);
+				abs += ((tolerance[band4.value] / 100) * abs);
+				var max = abs;
+				document.getElementById("result").innerHTML = ohms(min.toFixed(3))+" ~~ "+ohms(max.toFixed(3));
+				document.getElementById("result2").innerHTML = "(+/- "+tolerance[band4.value]+"% Tolerance)";
+			}
+		}
+		else if (bandNumber.value == "5") {
+			if (band1.value == "#" || band2.value == "#" || band3.value == "#" || band4.value == "#" || band5.value == "#") {
+				alert("Select all colors before proceeding");
+			}else{
+			var multiplier = 1;
+			for (var i = 0; i < values[band4.value]; i++) {
+				multiplier *= 10;
+			}
+			if (band4.value == "gold") {multiplier = 0.1;}
+			if (band4.value == "silver") {multiplier = 0.01;}
+
+				var abs = (((values[band1.value]*100) + (values[band2.value]*10) + values[band3.value]) * multiplier);
+
+				var min = abs - ((tolerance[band5.value] / 100) * abs);
+				abs += (tolerance[band5.value] / 100) * abs;
+				var max = abs;
+				document.getElementById("result").innerHTML = ohms(min.toFixed(3))+" ~~ "+ohms(max.toFixed(3));
+				document.getElementById("result2").innerHTML = "(+/- "+tolerance[band5.value]+"% Tolerance)";
+			}
+		}
+	}
+
+	var val = {"0":"black","1":"brown","2":"red","3":"orange","4":"yellow","5":"green","6":"blue","7":"violet","8":"grey","9":"white",}
+	var tol = {"20":"transparent","10":"silver","5":"gold","2":"red","1":"brown","0.5":"green","0.1":"violet","0.25":"blue","0.05":"grey","0":"black",}
+	var col1, col2, col3, cols, xply4, xply5;
+	function calculateColorGiga(dig,bv) {
+		if (dig>9000000000) {//can only calculate within the range of 9GigaOhms
+			alert("What were you thinking dude?\nDon't you realize that current might not flow---?\nMeet King Sam at the Walkway for explanations");
+		}
+		if (dig>=1000000000) {//within the calculable range (1G - 9G)
+			col1 = Math.floor(dig/1000000000);
+			col2 = Math.floor((dig/100000000) - (col1*10));
+			col3 = ((dig/10000000)  - (Math.floor(dig/100000000)*10));
+			
+			bandColor("color1",val[col1]);//color1 takes the first digit
+			bandColor("color2",val[col2]);
+			if(bv=="5"){
+				bandColor("color3",val[col3]);
+				bandColor("color4",val[7]);
+			}else{
+				bandColor("color3",val[8]);
+			}
+		}else{
+			calculateColorMega(dig,bv);
+		}
+	}
+	function calculateColorMega(dig,bv) {
+		if (dig>=1000000) {//1M - 999M
+			cols = Math.floor(dig/1000000);//used for further calculations
+			col1 = Math.floor(dig/1000000);
+			col2 = Math.floor((dig/100000) - (col1*10));
+			xply5 = 4;
+	    	xply4 = 5;
+			col3 = ((dig/10000)  - (Math.floor(dig/100000)*10));
+
+			    if (col1>99) {//100 - 999
+			    	colors100(cols);
+			    	xply5 = 6;
+			    	xply4 = 7;
+			    }
+			    if (col1>9) {//10 - 99
+			    	colors10(cols);
+			    	xply5 = 5;
+			    	xply4 = 6;
+			    }
+
+			bandColor("color1",val[col1]);//color1 takes the first digit
+			bandColor("color2",val[col2]);
+			if(bv=="5"){
+				bandColor("color3",val[col3]);
+				bandColor("color4",val[xply5]);
+			}else{
+				bandColor("color3",val[xply4]);
+			}
+		}else{
+			calculateColorKilo(dig,bv);
+		}
+	}
+	function calculateColorKilo(dig,bv) {
+		if (dig>=1000) {//1000 - 999999
+			cols = Math.floor(dig/1000);//used for further calculations
+			col1 = Math.floor(dig/1000);
+			col2 = Math.floor((dig/100) - (col1*10));
+			xply5 = 1;
+	    	xply4 = 2;
+			col3 = ((dig/10)  - (Math.floor(dig/100)*10));
+
+			    if (col1>99) {//100 - 999
+			    	colors100(cols);
+			    	xply5 = 3;
+			    	xply4 = 4;
+			    }
+			    if (col1>9) {//10 - 99
+			    	colors10(cols);
+			    	xply5 = 2;
+			    	xply4 = 3;
+			    }
+
+			bandColor("color1",val[col1]);//color1 takes the first digit
+			bandColor("color2",val[col2]);
+			if(bv=="5"){
+				bandColor("color3",val[col3]);
+				bandColor("color4",val[xply5]);
+			}else{
+				bandColor("color3",val[xply4]);
+			}
+		}else{
+			calculateColorHun(dig,bv);
+		}
+	}
+	function calculateColorHun(dig,bv) {
+		if (dig>=100) {//100 - 999
+			cols = Math.round(dig);
+			document.getElementById("result").innerHTML = ohms(cols);//display the input value
+
+			col1 = Math.floor(cols/100);
+			col2 = Math.floor((cols/10) - (col1*10));
+			col3 = Math.floor((cols) - (Math.floor(cols/10)*10));
+
+			bandColor("color1",val[col1]);//color1 takes the first digit
+			bandColor("color2",val[col2]);
+			if(bv=="5"){
+				bandColor("color3",val[col3]);
+				bandColor("color4",val[0]);
+			}else{
+				bandColor("color3",val[1]);
+			}
+		}
+		else{
+			calculateColorTen(dig,bv);
+		}
+	}
+	function calculateColorTen(dig,bv) {
+		if (dig>=10) {//10 - 99
+			cols = Math.round(dig*10);
+			document.getElementById("result").innerHTML = ohms(cols/10);//display the input value
+
+			col1 = Math.floor(cols/100);
+			col2 = Math.floor((cols/10) - (col1*10));
+			col3 = Math.floor(cols) - (Math.floor(cols/10)*10);
+
+			if(bv=="5"){
+				bandColor("color1",val[col1]);
+				bandColor("color2",val[col2]);
+				bandColor("color3",val[col3]);
+				bandColor("color4","gold");
+			}else{
+				coln = Math.round(dig);
+				col1 = Math.floor(coln/10);
+				col2 = coln - (col1*10);
+				document.getElementById("result").innerHTML = ohms(coln);//display the input value
+
+				bandColor("color1",val[col1]);
+				bandColor("color2",val[col2]);
+				bandColor("color3",val[0]);
+			}
+		}else{
+			calculateColorUnit(dig,bv);
+		}
+	}
+	function calculateColorUnit(dig,bv) {
+		if (dig>=1) {//1 - 9
+			cols = dig*100;
+			col1 = Math.floor(cols/100);
+			col2 = Math.floor((cols/10) - (col1*10));
+			col3 = Math.floor((cols - Math.floor(cols/10)*10));
+			
+			bandColor("color1",val[col1]);//color1 takes the first digit
+			bandColor("color2",val[col2]);
+			if(bv=="5"){
+				bandColor("color3",val[col3]);
+				bandColor("color4","silver");
+			}else{
+				bandColor("color3","gold");
+			}
+		}
+	}
+	function calculateColor() {
+		for (var i = 1; i <= 5; i++) {
+			document.getElementById("band"+i).value = "#";
+		}
+		var rawDig = digit.value, dig; dig = parseFloat(rawDig).toFixed(2);
+		var rng = parseInt(range.value);
+		var bv = document.getElementById("bandValue").value;//for tolerance color
+
+		if (bv=="5") {
+			document.getElementById("separator5").style.display = "";
+		}else{
+			document.getElementById("separator4").style.display = "";
+		}
+
+		if (tol[rng] === undefined) {alert("I don't think there's a tolerance value of "+rng+" :(");}
+
+		if (isNaN(parseInt(dig))) {
+			alert("Hey! you just forgot to enter a value");
+		}else{
+			document.getElementById("result").innerHTML = ohms(dig);//display the input value
+			if (dig<1) {//0.1 - 0.9
+				if (dig<0.1) {
+					alert("Sorry! But I can only calculate values between\n0.1Ohms - 9000000000Ohms(9GigaOhms)\nMeet King Sam at Block 10 for the code ;)");
+				}else{ 
+					cols = dig*100;
+					col1 = Math.floor(cols/10);
+					col2 = Math.floor(cols - (col1*10));
+					col3 = Math.floor((cols - Math.floor(cols))*10.1);
+
+					if(bv=="5"){
+						alert("5band not possible for values less than 1");
+						}else{
+							bandColor("color"+bv,tol[rng]);
+							bandColor("color1",val[col1]);//color1 takes the first digit
+							bandColor("color2",val[col2]);
+							bandColor("color3","silver");
+						}
+					}
+				}else{
+					bandColor("color"+bv,tol[rng]);
+					calculateColorGiga(dig,bv);
+				}
+			}
+		}
+	
+
+	function colors100(cols) {
+		col1 = Math.floor(cols/100);
+		col2 = (Math.floor(cols/10) - (col1*10));
+		col3 = cols - (Math.floor(cols/10)*10);
+	}
+	function colors10(cols) {
+		col1 = Math.floor(cols/10);
+		col2 = cols - (col1*10);
+		col3 = 0;
+	}
+	
+
+	
+
+
+
+	function ohms(val) {
+		if (val>=1000000000) {
+			return (val/1000000000).toFixed(3)+"GOhms";
+		}
+		if (val>=1000000) {
+			return (val/1000000).toFixed(3)+"MOhms";
+		}
+		if (val>=1000) {
+			return (val/1000).toFixed(3)+"kOhms";
+		}
+		else{
+		return parseFloat(val).toFixed(3)+"Ohms";
+		}
+	}
+
+	function removeLines() {
+		var lines = document.getElementsByClassName("imageLines"), i;
+		i = lines.length;
+		while(i--){
+			lines[i].style.display = "none";
+		}
+	}
+
+	function showDigit(value) {
+		if (isNaN(value) || value == "") {
+			digit.value = "";
+			document.getElementById("result").innerHTML = 0;
+		}else{
+			document.getElementById("result").innerHTML = ohms(value);
+			removeLines();
+		}
+	}
+
+	function showTolerance(value) {
+			document.getElementById("result2").innerHTML = "(+/- "+parseInt(value)+"% Tolerance)";
+			document.getElementById("color4").style.color = "transparent";
+			document.getElementById("color5").style.color = "transparent";
+	}
+</script>
+</body>
+</html>
