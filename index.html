@@ -73,9 +73,7 @@
 	    	height: 110px;
 			background-color: #fff;
 			border-radius: 2px;
-
-	    	/*width: 50%;*/
-	    	    
+			
 	    	    border-radius: 2px ;
 	    	    box-shadow: 0px 0px 2px #333333;
 	    	    text-align: center;
@@ -83,7 +81,7 @@
 		#imageHolder {
 			background-color: #eeeeee;
 			/*background-color: rgba(255, 239, 187, 0.7);*/
-			/*border-top: 8px solid #e5e5e5;*/
+			border-top: 6px solid #e5e5e5;
 			line-height: 3em;
 			border-radius: 54px;
 			height: 72px;
@@ -92,7 +90,8 @@
 			box-shadow: 1px 1px 2px #333333;
 		}
 		.imageLines {
-			font-size: 3.5em;
+			font-size: 85px;
+			font-weight: bold;
 			cursor: default;
 		}
 		.imageLines:hover {
@@ -158,72 +157,76 @@
 <div id="bandDiv" style="display: none;">
 <select id="band1" title="Select the first band of the resistor" class="selects" onchange="bandColor('color1',this.value)">
 	<option value="#">Select Color 1</option>
-	<option value="brown">Brown</option>
-	<option value="red">Red</option>
-	<option value="orange">Orange</option>
-	<option value="yellow">Yellow</option>
-	<option value="green">Green</option>
-	<option value="blue">Blue</option>
-	<option value="violet">Violet</option>
-	<option value="grey">Grey</option>
-	<option value="white">White</option>
+	<option value="brown" style="background-color: brown; font-weight: bold">Brown</option>
+	<option value="red" style="background-color: red; font-weight: bold">Red</option>
+	<option value="orange" style="background-color: orange; font-weight: bold">Orange</option>
+	<option value="yellow" style="background-color: yellow; font-weight: bold">Yellow</option>
+	<option value="green" style="background-color: green; font-weight: bold">Green</option>
+	<option value="blue" style="background-color: blue; font-weight: bold">Blue</option>
+	<option value="violet" style="background-color: violet; font-weight: bold">Violet</option>
+	<option value="grey" style="background-color: grey; font-weight: bold">Grey</option>
+	<option value="white" style="background-color: white; font-weight: bold">White</option>
 </select>
 
 <select id="band2" title="Select the second band of the resistor" class="selects" onchange="bandColor('color2',this.value)">
 	<option value="#">Select Color 2</option>
-	<option value="black">Black</option>
-	<option value="brown">Brown</option>
-	<option value="red">Red</option>
-	<option value="orange">Orange</option>
-	<option value="yellow">Yellow</option>
-	<option value="green">Green</option>
-	<option value="blue">Blue</option>
-	<option value="violet">Violet</option>
-	<option value="grey">Grey</option>
-	<option value="white">White</option>
+	<option value="black" style="background-color: black; color: white; font-weight: bold">Black</option>
+	<option value="brown" style="background-color: brown; font-weight: bold">Brown</option>
+	<option value="red" style="background-color: red; font-weight: bold">Red</option>
+	<option value="orange" style="background-color: orange; font-weight: bold">Orange</option>
+	<option value="yellow" style="background-color: yellow; font-weight: bold">Yellow</option>
+	<option value="green" style="background-color: green; font-weight: bold">Green</option>
+	<option value="blue" style="background-color: blue; font-weight: bold">Blue</option>
+	<option value="violet" style="background-color: violet; font-weight: bold">Violet</option>
+	<option value="grey" style="background-color: grey; font-weight: bold">Grey</option>
+	<option value="white" style="background-color: white; font-weight: bold">White</option>
 </select>
 
 <select id="band3" title="Select the third band of the resistor" class="selects" onchange="bandColor('color3',this.value)">
 	<option value="#">Select Color 3</option>
-	<option value="black">Black</option>
-	<option value="brown">Brown</option>
-	<option value="red">Red</option>
-	<option value="orange">Orange</option>
-	<option value="yellow">Yellow</option>
-	<option value="green">Green</option>
-	<option value="blue">Blue</option>
-	<option value="violet">Violet</option>
-	<option value="grey">Grey</option>
-	<option value="white">White</option>
-	<option disabled id="value1" value="gold">Gold</option><!-- this would not show in 5band -->
-	<option disabled id="value2" value="silver">Silver</option><!-- this would not show in 5band -->
+	<option value="black" style="background-color: black; color: white; font-weight: bold">Black</option>
+	<option value="brown" style="background-color: brown; font-weight: bold">Brown</option>
+	<option value="red" style="background-color: red; font-weight: bold">Red</option>
+	<option value="orange" style="background-color: orange; font-weight: bold">Orange</option>
+	<option value="yellow" style="background-color: yellow; font-weight: bold">Yellow</option>
+	<option value="green" style="background-color: green; font-weight: bold">Green</option>
+	<option value="blue" style="background-color: blue; font-weight: bold">Blue</option>
+	<option value="violet" style="background-color: violet; font-weight: bold">Violet</option>
+	<option value="grey" style="background-color: grey; font-weight: bold">Grey</option>
+	<option value="white" style="background-color: white; font-weight: bold">White</option>
+	<option disabled id="value1" value="gold" style="background-color: gold; font-weight: bold">Gold</option><!-- this would not show in 5band -->
+	<option disabled id="value2" value="silver" style="background-color: silver; font-weight: bold">Silver</option><!-- this would not show in 5band -->
 	<!-- <option value="transparent">None</option> -->
 </select>
 
 <select id="band4" title="" class="selects" onchange="bandColor('color4',this.value)">
 	<option value="#">Select Color 4</option>
-	<option value="black">Black</option>
-	<option value="brown">Brown</option>
-	<option value="red">Red</option>
-	<option disabled id="tolerance1" value="orange">Orange</option><!-- this would be invisible in a 4band -->
-	<option disabled id="tolerance2" value="yellow">Yellow</option><!-- this would be invisible in a 4band -->
-	<option disabled id="tolerance3" value="green">Green</option><!-- this would be invisible in a 4band -->
-	<option disabled id="tolerance4" value="blue">Blue</option><!-- this would be invisible in a 4band -->
-	<option disabled id="tolerance5" value="violet">Violet</option><!-- this would be invisible in a 4band -->
-	<option disabled id="tolerance6" value="grey">Grey</option><!-- this would be invisible in a 4band -->
-	<option disabled id="tolerance7" value="white">White</option><!-- this would be invisible in a 4band -->
-	<option value="gold">Gold</option>
-	<option value="silver">Silver</option>
+	<option value="black" style="background-color: black; color: white; font-weight: bold" title="Select this band to show the absolute value">Black</option>
+	<option value="brown" style="background-color: brown; font-weight: bold">Brown</option>
+	<option value="red" style="background-color: red; font-weight: bold">Red</option>
+	<option disabled id="tolerance1" value="orange" style="background-color: orange; font-weight: bold">Orange</option><!-- this would be invisible in a 4band -->
+	<option disabled id="tolerance2" value="yellow" style="background-color: yellow; font-weight: bold">Yellow</option><!-- this would be invisible in a 4band -->
+	<option value="green" style="background-color: green; font-weight: bold">Green</option><!-- this would be invisible in a 4band -->
+	<option value="blue" style="background-color: blue; font-weight: bold">Blue</option><!-- this would be invisible in a 4band -->
+	<option value="violet" style="background-color: violet; font-weight: bold">Violet</option><!-- this would be invisible in a 4band -->
+	<option value="grey" style="background-color: grey; font-weight: bold">Grey</option><!-- this would be invisible in a 4band -->
+	<option disabled id="tolerance3" value="white" style="background-color: white; font-weight: bold">White</option><!-- this would be invisible in a 4band -->
+	<option value="gold" style="background-color: gold; font-weight: bold">Gold</option>
+	<option value="silver" style="background-color: silver; font-weight: bold">Silver</option>
 	<option disabled id="value3" value="transparent">None</option><!-- this would not show in 5band -->
 </select>
 
 <select id="band5" title="" class="selects" onchange="bandColor('color5',this.value)" style="display: none;">
 	<option value="#">Select Color 5</option>
-	<option value="black">Black</option>
-	<option value="brown">Brown</option>
-	<option value="red">Red</option>
-	<option value="gold">Gold</option>
-	<option value="silver">Silver</option>
+	<option value="black" style="background-color: black; color: white; font-weight: bold">Black</option>
+	<option value="brown" style="background-color: brown; font-weight: bold">Brown</option>
+	<option value="red" style="background-color: red; font-weight: bold">Red</option>
+	<option value="green" style="background-color: green; font-weight: bold">Green</option>
+	<option value="blue" style="background-color: blue; font-weight: bold">Blue</option>
+	<option value="violet" style="background-color: violet; font-weight: bold">Violet</option>
+	<option value="grey" style="background-color: grey; font-weight: bold">Grey</option>
+	<option value="gold" style="background-color: gold; font-weight: bold">Gold</option>
+	<option value="silver" style="background-color: silver; font-weight: bold">Silver</option>
 	<!-- <option value="transparent">None</option> -->
 </select>
 
@@ -244,7 +247,7 @@
 </select><br><br>
 	<div id="inputs" style="display: none;">
 		RESISTANCE VALUE: <input id="digit" onkeyup="showDigit(this.value)">
-		TOLERANCE: <input id="range" onkeyup="showTolerance(this.value)" value=0>
+		TOLERANCE: <input id="range" onkeyup="showTolerance(this.value)">
 		<span class="calculate" onclick="calculateColor()">CONVERT</span>
 	</div>
 </div><!-- end inputDiv -->
@@ -292,11 +295,22 @@
 	var bandNumber = document.getElementById("bandNumber");
 
 	function bandColor(band,value) {//filling and coloring the bands
-		document.getElementById(band).style.display = "";//
+		document.getElementById(band).style.display = "";//colorX
 		document.getElementById(band).innerHTML = "|";
 		document.getElementById(band).title = value;
 		document.getElementById(band).style.color = value;
+
+		var bg;
+		switch (band){
+			case 'color1' : bg = 'band1'; break;
+			case 'color2' : bg = 'band2'; break;
+			case 'color3' : bg = 'band3'; break;
+			case 'color4' : bg = 'band4'; break;
+			case 'color5' : bg = 'band5'; break;
+		}
+		document.getElementById(bg).style.backgroundColor = value;
 	}
+	//
 
 	function bandType(value) {//selecting 4band or 4band
 		document.getElementById("result").innerHTML = "0Ohms";
@@ -310,16 +324,17 @@
 		removeLines();
 		for (var i = 1; i <= 5; i++) {
 			document.getElementById("band"+i).value = "#";
+			document.getElementById("band"+i).style.backgroundColor = "";
 		}
+		
 
 		if (value == "5") {//a five band color code
-			for (var i = 1; i <= 7; i++) {//show the hidden colors in band 4
+			for (var i = 1; i <= 3; i++) {//show the hidden colors in band 4
 				document.getElementById("tolerance"+i).disabled = false;
 			}
-				//show the colors in band 5
-				document.getElementById("value1").disabled = true;
-				document.getElementById("value2").disabled = true;
-				document.getElementById("value3").disabled = true;
+			for (var i = 1; i <= 3; i++) {//show the hidden colors in band 4
+				document.getElementById("value"+i).disabled = true;
+			}
 			
 			sep4.style.display = "none";//hide 4band separator
 			band5.style.display = "";//make band5 <select> visible
@@ -334,14 +349,12 @@
 			sep5.innerHTML = "||";//fill 5band's separator
 			sep5.style.color = "transparent";//make the separator invisible
 		}else{//a four band color code
-			for (var i = 1; i <= 7; i++) {//hide the colors in band 4
+			for (var i = 1; i <= 3; i++) {//hide the colors in band 4
 				document.getElementById("tolerance"+i).disabled = true;
 			}
-			
-			//hide the colors in band 4
-				document.getElementById("value1").disabled = false;
-				document.getElementById("value2").disabled = false;
-				document.getElementById("value3").disabled = false;
+			for (var i = 1; i <= 3; i++) {//show the hidden colors in band 4
+				document.getElementById("value"+i).disabled = false;
+			}
 
 			band5.style.display = "none";//hide band5 <select>
 			band5.value = "#";
@@ -429,7 +442,7 @@
 	}
 
 	var val = {"0":"black","1":"brown","2":"red","3":"orange","4":"yellow","5":"green","6":"blue","7":"violet","8":"grey","9":"white",}
-	var tol = {"20":"transparent","10":"silver","5":"gold","2":"red","1":"brown","0.5":"green","0.1":"violet","0.25":"blue","0.05":"grey","0":"black",}
+	var tol = {"20":"transparent","10":"silver","5":"gold","2":"red","1":"brown","0.5":"green","0.25":"blue","0.1":"violet","0.05":"grey",}
 	var col1, col2, col3, cols, xply4, xply5;
 	function calculateColorGiga(dig,bv) {
 		if (dig>9000000000) {//can only calculate within the range of 9GigaOhms
@@ -586,9 +599,12 @@
 	function calculateColor() {
 		for (var i = 1; i <= 5; i++) {
 			document.getElementById("band"+i).value = "#";
+			document.getElementById("band"+i).style.backgroundColor = "";
 		}
 		var rawDig = digit.value, dig; dig = parseFloat(rawDig).toFixed(2);
-		var rng = parseInt(range.value);
+		var rng = range.value;
+		if (isNaN(rng)) {rng = 0;}
+
 		var bv = document.getElementById("bandValue").value;//for tolerance color
 
 		if (bv=="5") {
@@ -597,7 +613,7 @@
 			document.getElementById("separator4").style.display = "";
 		}
 
-		if (tol[rng] === undefined) {alert("I don't think there's a tolerance value of "+rng+" :(");}
+		if (tol[rng] === undefined) {alert("I don't think there's a tolerance value of "+rng+" :("); tol[rng] = "transparent";}
 
 		if (isNaN(parseInt(dig))) {
 			alert("Hey! you just forgot to enter a value");
@@ -605,8 +621,8 @@
 			document.getElementById("result").innerHTML = ohms(dig);//display the input value
 			if (dig<1) {//0.1 - 0.9
 				if (dig<0.1) {
-					alert("Sorry! But I can only calculate values between\n0.1Ohms - 9000000000Ohms(9GigaOhms)\nMeet King Sam at Block 10 for the code ;)");
-				}else{ 
+					alert("Sorry! But I can only calculate values between\n0.1Ohms - 99000000000Ohms(99GigaOhms)\nMeet King Sam at Block 10 for the code ;)");
+				}else{//value >= 0.1, continue 
 					cols = dig*100;
 					col1 = Math.floor(cols/10);
 					col2 = Math.floor(cols - (col1*10));
@@ -615,6 +631,7 @@
 					if(bv=="5"){
 						alert("5band not possible for values less than 1");
 						}else{
+							// alert("color"+tol[rng]);
 							bandColor("color"+bv,tol[rng]);
 							bandColor("color1",val[col1]);//color1 takes the first digit
 							bandColor("color2",val[col2]);
@@ -622,6 +639,7 @@
 						}
 					}
 				}else{
+					// alert(tol[rng]);
 					bandColor("color"+bv,tol[rng]);
 					calculateColorGiga(dig,bv);
 				}
@@ -679,7 +697,8 @@
 	}
 
 	function showTolerance(value) {
-			document.getElementById("result2").innerHTML = "(+/- "+parseInt(value)+"% Tolerance)";
+		if (isNaN(value) || value <0.05) {value = 0;}
+			document.getElementById("result2").innerHTML = "(+/- "+parseFloat(value).toFixed(2)+"% Tolerance)";
 			document.getElementById("color4").style.color = "transparent";
 			document.getElementById("color5").style.color = "transparent";
 	}
